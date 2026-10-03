@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>A Little Birthday Surprise 🤭</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Georgia,serif;background:#100813;color:#fff;overflow-x:hidden}
+.page{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:25px;position:relative;overflow:hidden}
+.one{background:radial-gradient(circle at 50% 30%,#8d3c73,#321637 48%,#100813)}
+.two{background:linear-gradient(145deg,#1a0d22,#542044,#1a0d22)}
+.three{background:radial-gradient(circle,#71365d,#180b1d 70%)}
+.box{max-width:700px;z-index:2}.tiny{font-family:Arial,sans-serif;font-size:12px;letter-spacing:4px;text-transform:uppercase;opacity:.7}
+h1{font-size:clamp(3rem,12vw,6.5rem);line-height:.9;margin:22px 0;color:#fff;text-shadow:0 5px 25px #0008}
+h2{font-size:clamp(2rem,7vw,4rem);margin:12px 0}
+p{font-size:clamp(1.05rem,2.5vw,1.3rem);line-height:1.8}
+.btn{display:inline-block;margin-top:18px;padding:15px 27px;border:1px solid #fff5;border-radius:50px;background:#ffffff18;color:#fff;font-weight:bold;font-size:1rem;cursor:pointer;backdrop-filter:blur(8px);transition:.25s}
+.btn:hover{transform:translateY(-3px);background:#fff;color:#5b1c51}
+.note{background:#ffffff0d;border:1px solid #ffffff1c;border-radius:30px;padding:30px;box-shadow:0 20px 60px #0006;backdrop-filter:blur(12px)}
+.heart{position:absolute;bottom:-50px;animation:up linear infinite;opacity:0}
+@keyframes up{0%{transform:translateY(0) scale(.8);opacity:0}15%{opacity:.7}100%{transform:translateY(-115vh) scale(1.2) rotate(30deg);opacity:0}}
+.fade{opacity:0;transform:translateY(25px);transition:1.2s}.fade.on{opacity:1;transform:none}
+.line{width:70px;height:2px;background:#fff6;margin:25px auto}
+.secret{margin-top:25px;font-size:.95rem;opacity:.7}
+</style>
+</head>
+<body>
+
+<section class="page one">
+<div class="box">
+<div class="tiny">A tiny surprise for someone special</div>
+<h1>Happy Birthday<br>Soda Sister 🤭🫀🫂</h1>
+<p>Okay… before you ask, yes, this whole page is for you. 😂❤️</p>
+<button class="btn" onclick="go('wishes')">Open Your Surprise 💌</button>
+</div>
+<span class="heart" style="left:8%;font-size:28px;animation-duration:8s">❤️</span>
+<span class="heart" style="left:23%;font-size:20px;animation-duration:6s;animation-delay:1s">🤭</span>
+<span class="heart" style="left:47%;font-size:30px;animation-duration:9s;animation-delay:2s">🫂</span>
+<span class="heart" style="left:72%;font-size:25px;animation-duration:7s;animation-delay:3s">💗</span>
+<span class="heart" style="left:90%;font-size:22px;animation-duration:10s">✨</span>
+</section>
+
+<section id="wishes" class="page two">
+<div class="box note fade">
+<div class="tiny">No boring birthday speech 😂</div>
+<h2>Just One Thing…</h2>
+<div class="line"></div>
+<p>You're honestly one of the most special people in my life.</p>
+<p>You're my sister, my partner in random nonsense, my occasional headache 😂, and someone I can always count on. 🫂</p>
+<p>We fight. We tease. We annoy each other for absolutely no reason. 🤭</p>
+<p>But behind all of that, there's something I don't always say:</p>
+<p><strong>I'm really lucky that you're my sister. ❤️</strong></p>
+<p>So today, forget everything else and just enjoy your day. Eat something nice, laugh loudly, make memories, and stay your crazy self. 🎂✨</p>
+<button class="btn" onclick="go('last')">Wait… There's More 🥹</button>
+</div>
+</section>
+
+<section id="last" class="page three">
+<div class="box note fade">
+<div class="tiny">One last thing</div>
+<h2>Read This Slowly. 🥹</h2>
+<div class="line"></div>
+<p>One day, we'll both get older.</p>
+<p>Life will become busier. We'll have different dreams, different responsibilities, and maybe we'll argue about completely different things. 😂</p>
+<p>But I hope one thing never changes.</p>
+<p><strong>You'll always have a brother who wants to see you happy.</strong> 🫂❤️</p>
+<p>I might not say “I love you” every day. I might hide it behind jokes and teasing.</p>
+<p>But if you ever wonder whether you matter to me…</p>
+<p><strong>You do. More than you probably realize. 🫀</strong></p>
+<p>Thank you for being my sister.</p>
+<p>Keep smiling. Keep dreaming. Keep being you.</p>
+<h2>Happy Birthday, Soda Sister. 🎂❤️</h2>
+<p>Whatever happens in life, we're still family. Always. 🫂</p>
+<div class="secret">Made specially for you — from your annoying brother 🤭❤️</div>
+</div>
+</section>
+
+<script>
+function go(id){document.getElementById(id).scrollIntoView({behavior:"smooth"});}
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("on")}),{threshold:.15});
+document.querySelectorAll(".fade").forEach(e=>obs.observe(e));
+</script>
+</body>
+</html>
